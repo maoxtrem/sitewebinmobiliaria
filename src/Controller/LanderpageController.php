@@ -11,10 +11,10 @@ final class LanderpageController extends AbstractController
     #[Route('/', name: 'app_')]
     public function index(): Response
     {
-        return $this->redirectToRoute('app_landerpage');
+        return $this->redirectToRoute('app_inmobiliaria');
         
     }
-    #[Route('/landerpage', name: 'app_landerpage')]
+    #[Route('/inmobiliaria', name: 'app_inmobiliaria')]
     public function landerpage(): Response
     {
         return $this->render('landerpage/index.html.twig', [

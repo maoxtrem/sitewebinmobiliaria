@@ -1,20 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LanderpageController!{% endblock %}
+{% block title %}Hello LanderpageController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<style>
+		body {
+			background-image: url('https://picsum.photos/1600/900?blur=2');
+			background-attachment: fixed;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.navbar {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1030;
+		}
+		.content-wrapper {
+			margin-top: 70px; /* Espacio para que no se solape con el navbar */
+		}
+		.gallery img {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			margin-bottom: 15px;
+		}
+		.gallery-section {
+			padding: 60px 20px;
+			background-color: rgba(255, 255, 255, 0); /* Fondo semi-transparente para legibilidad */
+			border-radius: 10px;
+			margin-bottom: 30px;
+		}
+	</style>
+	<!-- Navbar Fijo -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="/img/logo.png" alt="Logo" width="48">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#galeria1">Galería 1</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<!-- Contenido desplazable -->
+	<div
+		class="content-wrapper">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/workspaces/sitewebinmobiliaria/src/Controller/LanderpageController.php</code></li>
-        <li>Your template at <code>/workspaces/sitewebinmobiliaria/templates/landerpage/index.html.twig</code></li>
-    </ul>
-</div>
+		<!-- Galería 1 -->
+		<section class="gallery-section" id="galeria1">
+			<div class="container">
+				<div id="galeriaSlider" class="carousel slide">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="/img/logo.png" class="d-block w-75" alt="Imagen 1">
+						</div>
+	
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+	</div>
+
 {% endblock %}
